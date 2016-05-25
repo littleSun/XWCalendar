@@ -34,7 +34,9 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-        
+        self.backgroundColor = [UIColor whiteColor];
+        self.themeColor = [UIColor blackColor];
+
     }
     return self;
 }
@@ -48,10 +50,6 @@
 
 - (void)commonInit
 {
-
-    self.backgroundColor = [UIColor whiteColor];
-    self.themeColor = [UIColor blackColor];
-
     self.weekdayTextType = XWCalendarViewWeekdayTextTypeVeryShort;
     
 //    self.leftArrow.backgroundColor = [UIColor redColor];

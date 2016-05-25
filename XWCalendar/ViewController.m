@@ -22,21 +22,22 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     XWCalendarView *haha = [[XWCalendarView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, XWCalendarViewGetHeight(self.view.frame.size.width))];
+    haha.themeColor = [UIColor blueColor];
     [self.view addSubview:haha];
     haha.delegate = self;
 
 }
 
-//- (BOOL)calendarView:(XWCalendarView *)target isEnabledDate:(NSDate *)date
-//{
-//    NSDate *today = [target clampDate:[NSDate date] toComponents:kCalendarUnitYMD];
-//
-//    if ([today compare:date] == NSOrderedAscending) {
-//        return NO;
-//    }
-//    
-//    return YES;
-//}
+- (BOOL)calendarView:(XWCalendarView *)target isEnabledDate:(NSDate *)date
+{
+    NSDate *today = [target clampDate:[NSDate date] toComponents:kCalendarUnitYMD];
+
+    if ([today compare:date] == NSOrderedAscending) {
+        return NO;
+    }
+    
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
