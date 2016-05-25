@@ -27,16 +27,16 @@
 
 }
 
-- (BOOL)calendarView:(XWCalendarView *)target isEnabledDate:(NSDate *)date
-{
-    NSDate *today = [target clampDate:[NSDate date] toComponents:kCalendarUnitYMD];
-
-    if ([today compare:date] == NSOrderedAscending) {
-        return NO;
-    }
-    
-    return YES;
-}
+//- (BOOL)calendarView:(XWCalendarView *)target isEnabledDate:(NSDate *)date
+//{
+//    NSDate *today = [target clampDate:[NSDate date] toComponents:kCalendarUnitYMD];
+//
+//    if ([today compare:date] == NSOrderedAscending) {
+//        return NO;
+//    }
+//    
+//    return YES;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -103,6 +103,8 @@
         
         self.firstDate = firstDate;
         self.lastDate = [self.calendar dateByAddingComponents:adcomps2 toDate:firstDate options:0];
+        
+        
     }
     
     self.firstDateMonth = nil;
@@ -111,6 +113,16 @@
     if (_collectionView) {
         [self.collectionView reloadData];
         
+        
+        CATransition* transition = [CATransition animation];
+        transition.duration = 0.5;
+        if (sender.tag == 101) {
+            transition.subtype = kCATransitionFromRight;
+        }
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionPush;
+        transition.removedOnCompletion = YES;
+        [self.collectionView.layer addAnimation:transition forKey:@"transition"];
         
         self.titleLb.text = [self.headerDateFormatter stringFromDate:[self firstOfMonthForSection:0]];
     }
@@ -367,8 +379,8 @@
         cell.userInteractionEnabled = YES;
     }
     
-    cell.layer.shouldRasterize = YES;
-    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//    cell.layer.shouldRasterize = YES;
+//    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
     return cell;
 }
