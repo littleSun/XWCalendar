@@ -501,7 +501,7 @@ static const NSInteger kFirstDay = 1;
     if (!date) {
         return nil;
     }
-    NSInteger section = [self sectionForDate:date];
+    NSInteger section = 0;
     NSDate *firstOfMonth = [self firstOfMonthForSection:section];
     
     NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstOfMonth] weekday];
