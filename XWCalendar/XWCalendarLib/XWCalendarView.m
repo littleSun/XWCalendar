@@ -36,7 +36,8 @@
         
         self.backgroundColor = [UIColor whiteColor];
         self.themeColor = [UIColor blackColor];
-
+        self.weekdayTextType = XWCalendarViewWeekdayTextTypeVeryShort;
+        
     }
     return self;
 }
@@ -50,8 +51,7 @@
 
 - (void)commonInit
 {
-    self.weekdayTextType = XWCalendarViewWeekdayTextTypeVeryShort;
-    
+
 //    self.leftArrow.backgroundColor = [UIColor redColor];
 //    self.rightArrow.backgroundColor = [UIColor redColor];
  
@@ -338,6 +338,7 @@
     XWCalendarViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:XWCalendarViewCellIdentifier
                                                                                      forIndexPath:indexPath];
     
+    cell.circleSelectedColor = self.themeColor;
     cell.delegate = self;
     
     NSDate *firstOfMonth = [self firstOfMonthForSection:indexPath.section];
